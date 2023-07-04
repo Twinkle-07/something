@@ -16,11 +16,14 @@ const server = http.createServer((req, res) => {
         }
         else{
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            const modifiedContent = data.replace('<%= name %>', 'John Doe');
+            const modifiedContent = data.replace('helloo', 'John Doe');
             res.end(modifiedContent);
         }
 
       });
+   }else if(req.url=="/submit"){
+    res.end("data submitted")
+    console.log("data submitted")
    }
 
 
