@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const url = require("url");
 
 
 const server = http.createServer((req, res) => {
@@ -17,22 +16,15 @@ const server = http.createServer((req, res) => {
         }
         else{
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            const modifiedContent = data.replace('hii', 'John Doe');
+            const modifiedContent = data.replace('helloo', 'John Doe');
             res.end(modifiedContent);
         }
 
       });
-   }else if(req.url == "/submit"){
-    //  req.on("data",(chunk)=>{
-    //    res.end("submitted")
-    //    console.log(chunk.toString())
-    //   // res.end("hello");
-    // })
-    res.end("hjmxgh");
+   }else if(req.url=="/submit"){
+    res.end("data submitted")
+    console.log("data submitted")
    }
-    });
 
-const port = 8000;
-server.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+
 });
